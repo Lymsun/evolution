@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularJsDemo1">
+    <head>
+        <meta charset="UTF-8">
+        <title>angularJsDemo1</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/angularJsDemo1.css">
+    </head>
+
+    <body>
+
+        <div id="main" ng-controller="helloController">
+            <h1>{{clock.now}}</h1>
+            <input type="text" placeholder="Your Name" ng-model="person.name">
+            <h2>Hello {{person.name}}</h2>
+            <div id="addMachine">
+                <h4>The simplest adding machine</h4>
+                <button ng-click="addMachine.addCount(1)">Add</button>
+                <button ng-click="addMachine.subtractCount(1)">Suntract</button>
+                <h4>Current count:{{addMachine.count}}</h4>
+            </div>
+        </div>
+
+        <script src="../js/angular.js"></script>
+        <script src="../js/angularJsDemo1.js"></script>
+
+    </body>
+</html>
