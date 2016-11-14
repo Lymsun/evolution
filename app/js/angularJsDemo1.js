@@ -36,5 +36,14 @@ var app = angular.module('angularJsDemo1', []).controller('helloController', fun
         }
     };
 
+    $scope.user = {
+        name : "",
+        age : 0,
+        maxNum : "",
+        minNum : "",
+        email: "",
+        url : ""
+    };
+
     updateClock();
 });
