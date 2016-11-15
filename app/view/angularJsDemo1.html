@@ -23,47 +23,60 @@
             </div>
 
             <div id="tableVerify" class="container">
-                <form action="#" class="form-horizontal" role="form">
-                    <div class="form-group">
+                <form action="#" class="form-horizontal" role="form" name="verifyForm"
+                ng-submit="user.submitForm(verifyForm.$valid)">
+                    <div class="form-group has-feedback">
                         <label for="inputUsername" class="col-md-2 col-md-offset-1 control-label">User Name:</label>
                         <div class="col-md-7">
                             <input type="text" class="form-control" id="inputUsername" placeholder="User Name"
-                            required ng-model="user.name">
+                            name="userName" required ng-model="user.name">
+                            <span class="glyphicon glyphicon-ok form-control-feedback"
+                            ng-show="verifyForm.userName.$dirty && verifyForm.userName.$valid"></span>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label for="inputUserAge" class="col-md-2 col-md-offset-1 control-label">User Age</label>
                         <div class="col-md-7">
                             <input type="number" class="form-control" id="inputUserAge" placeholder="User Age"
                             name="userAge" ng-model="user.age">
+                            <span class="glyphicon glyphicon-ok form-control-feedback"
+                            ng-show="verifyForm.userAge.$dirty && verifyForm.userAge.$valid"></span>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label for="inputEmail" class="col-md-2 col-md-offset-1 control-label">Email Address:</label>
                         <div class="col-md-7">
                             <input type="email" class="form-control" id="inputEmail" placeholder="Email Address"
                             name="userEmail" ng-model="user.email">
+                            <span class="glyphicon glyphicon-ok form-control-feedback"
+                            ng-show="verifyForm.userEmail.$dirty && verifyForm.userEmail.$valid"></span>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label for="numMax" class="col-md-2 col-md-offset-1 control-label">Max Number:</label>
                         <div class="col-md-7">
                             <input type="text" class="form-control" id="numMax" placeholder="Max Number"
-                            ng-maxlength="20" ng-model="user.maxNum">
+                            name="numMax" ng-maxlength="20" ng-model="user.maxNum">
+                            <span class="glyphicon glyphicon-ok form-control-feedback"
+                            ng-show="verifyForm.numMax.$dirty && verifyForm.numMax.$valid"></span>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label for="numMin" class="col-md-2 col-md-offset-1 control-label">Minimum Number:</label>
                         <div class="col-md-7">
                             <input type="text" class="form-control" id="numMin" placeholder="Minimum Number"
-                            ng-minlength="5" ng-model="user.minNum">
+                            name="numMin" ng-minlength="5" ng-model="user.minNum">
+                            <span class="glyphicon glyphicon-ok form-control-feedback"
+                            ng-show="verifyForm.numMin.$dirty && verifyForm.numMin.$valid"></span>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label for="inputUrl" class="col-md-2 col-md-offset-1 control-label">Url:</label>
                         <div class="col-md-7">
                             <input type="url" class="form-control" id="inputUrl" placeholder="Url"
                             name="userUrl" ng-model="user.url">
+                            <span class="glyphicon glyphicon-ok form-control-feedback"
+                            ng-show="verifyForm.userUrl.$dirty && verifyForm.userUrl.$valid"></span>
                         </div>
                     </div>
                     <div class="form-group text-center">

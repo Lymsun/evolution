@@ -42,7 +42,12 @@ var app = angular.module('angularJsDemo1', []).controller('helloController', fun
         maxNum : "",
         minNum : "",
         email: "",
-        url : ""
+        url : "",
+        submitForm: function (isValid) {
+            if(!isValid) {
+                alert("FAIL");
+            }
+        }
     };
 
     updateClock();
