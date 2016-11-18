@@ -38,7 +38,7 @@
                         <label for="inputUserAge" class="col-md-2 col-md-offset-1 control-label">User Age</label>
                         <div class="col-md-7">
                             <input type="number" class="form-control" id="inputUserAge" placeholder="User Age"
-                            name="userAge" ng-model="user.age">
+                            require name="userAge" ng-model="user.age">
                             <span class="glyphicon glyphicon-ok form-control-feedback"
                             ng-show="verifyForm.userAge.$dirty && verifyForm.userAge.$valid"></span>
                         </div>
@@ -47,7 +47,7 @@
                         <label for="inputEmail" class="col-md-2 col-md-offset-1 control-label">Email Address:</label>
                         <div class="col-md-7">
                             <input type="email" class="form-control" id="inputEmail" placeholder="Email Address"
-                            name="userEmail" ng-model="user.email">
+                            multiple-email name="userEmail" ng-model="user.email">
                             <span class="glyphicon glyphicon-ok form-control-feedback"
                             ng-show="verifyForm.userEmail.$dirty && verifyForm.userEmail.$valid"></span>
                         </div>
@@ -85,12 +85,12 @@
                 </form>
             </div>
             <div class="col-md-9">
-                1.用户名（必填项）：{{user.name}}<br>
-                2.年龄（数字）：{{user.age}}<br>
-                3.电子邮件：{{user.email}}<br>
-                4.最小数字=5：{{user.minNum}}<br>
-                5.最大数字=20：{{user.maxNum}}<br>
-                6.Url：{{user.url}}<br>
+                1.用户名（必填项）：{{user.name}}<br>{{verifyForm.userName.$valid}}<br>
+                2.年龄（数字）：{{user.age}}<br>{{verifyForm.userAge.$valid}}<br>
+                3.电子邮件：{{user.email}}<br>{{verifyForm.userEmail.$valid}}<br>
+                4.最小数字=5：{{user.minNum}}<br>{{verifyForm.numMin.$valid}}<br>
+                5.最大数字=20：{{user.maxNum}}<br>{{verifyForm.numMax.$valid}}<br>
+                6.Url：{{user.url}}<br>{{verifyForm.userUrl.$valid}}<br>
             </div>
 
         </div>
