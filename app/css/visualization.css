@@ -9,7 +9,66 @@
  *
  */
 
-* {
-	padding : 0;
-	margin : 0;
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url('../fonts/glyphicons-halflings-regular.eot');
+	src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
+@font-face {
+	font-family: 'led';
+	src: url('../fonts/DSDIGI.eot');
+	src: url('../fonts/DSDIGI.eot?#iefix') format('embedded-opentype'), url('../fonts/DSDIGI.woff') format('woff'), url('../fonts/DSDIGI.ttf') format('truetype');
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+.mainFrame {
+	background-color: #161f26;
+	color: #d8d8d8;
+	min-width: 5760px;
+	min-height: 1000px;
+}
+
+/*
+***************start*****************
+*导航条 style
+*/
+.mainFrame header {
+	position: relative;
+	height: 110px;
+	box-sizing: border-box;
+	text-align: center;
+	background: url("../img/bg-header.jpg") no-repeat center;
+	background-size: cover;
+	color: #fff;
+	border-bottom: 3px solid rgba(15, 255, 156, 0.7);
+}
+
+.mainFrame header .leftSection {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	text-align: left;
+	font-family: Helvetica, sans-serif;
+}
+
+.mainFrame header .leftSection small {
+	margin-right: 5px;
+	font-size: 0.4em;
+}
+
+.mainFrame header .centerSection {
+
+}
+
+.mainFrame header .rightSection {
+
+}
+/*
+*导航条 style
+****************end******************
+*/
