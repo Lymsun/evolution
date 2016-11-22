@@ -21,9 +21,26 @@
 	src: url('../fonts/DSDIGI.eot?#iefix') format('embedded-opentype'), url('../fonts/DSDIGI.woff') format('woff'), url('../fonts/DSDIGI.ttf') format('truetype');
 }
 
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-off:before {
+    content: "\e017";
+}
+
 * {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -39,6 +56,7 @@ ul {
 	color: #d8d8d8;
 	min-width: 5760px;
 	min-height: 1000px;
+    font-family: "Microsoft YaHei", "黑体", "宋体", sans-serif;
 }
 
 /*
@@ -87,11 +105,11 @@ ul {
 
 .mainFrame header .centerSection h1 {
 	font-size: 52px;
-	font-family: "Microsoft YaHei", "黑体", "宋体";
+	font-family: "Microsoft YaHei", "黑体", "宋体", sans-serif;
 	display: inline-block;
 	font-weight: normal;
 	letter-spacing: 42px;
-	margin: -15px 0px 0px 0px;
+	margin: -15px 0 0 0;
 }
 
 .mainFrame header .rightSection {
@@ -99,7 +117,6 @@ ul {
 	position: absolute;
 	right: 10px;
 	bottom: 10px;
-	font-family: Helvetica, sans-serif;
 }
 
 .mainFrame header .rightSection #weather {
@@ -126,6 +143,7 @@ ul {
 	line-height: 100px;
 	font-size: 28px;
 	color: #999;
+    font-family: "Microsoft YaHei", "黑体", "宋体", sans-serif;
 }
 
 .mainFrame header .rightSection #currentTime {
@@ -137,11 +155,29 @@ ul {
 .mainFrame header .rightSection #currentTime #currentTime_time {
 	color: #06c8ca;
 	font-size: 30px;
+    margin-bottom: 4px;
 }
 	
 .mainFrame header .rightSection #currentTime #currentTime_date {
 	color: #999;
 	font-size: 14px;
+}
+
+.mainFrame header .rightSection #exitBtn {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px 10px;
+    border-left: 1px solid #555;
+    font-size: 26px;
+    width: 40px;
+    text-align: right;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #999;
+}
+
+.mainFrame header .rightSection #exitBtn:hover {
+    color: #fff;
 }
 /*
 *导航条 style
