@@ -7,9 +7,11 @@
  *
  */
 
-var app = angular.module('angularJsDemo1', []).controller('helloController', function($scope, $timeout){
+var app = angular.module('angularJsDemo1', []);
+
+app.controller('helloController', function($scope, $timeout){
    $scope.person = {
-       name : ""
+       name : "Lynch"
    };
     var updateClock = function(){
         var tempDate = new Date();

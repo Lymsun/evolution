@@ -3,18 +3,25 @@
  * File: angularRoute.js
  * Author: Lym
  * Created Date: 2016/11/23.
- * Function:
+ * Function: angular route function
  *
  */
 
-(function () {
-    var app = angular.module('angularRoute', ['ngRoute']);
 
-    app.controller('routeController', function ($scope) {});
+var app = angular.module('angularRoute', ['ngRoute']);
+
+    app
+        .controller('routeController', function ($scope) {})
+        .controller('homeController', function ($scope) {
+            $scope.hello = "Hello Home!"
+        })
+        .controller('dashboardController', function ($scope) {
+            $scope.hello = "Hello Dashboard!";
+        });
 
     app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider
-            .when('/', {
+            .when('/home', {
                 templateUrl: '../view/home.html',
                 controller: 'homeController',
                 controllerAs: 'home'
@@ -25,8 +32,8 @@
                 controllerAs: 'dashboard'
             })
             .otherwise({
-                redirectTo: '/'
-            })
-    }]);
-});
+                redirectTo: '/home'
+        });
+}]);
+
 

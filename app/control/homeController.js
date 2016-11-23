@@ -7,6 +7,7 @@
  *
  */
 
-(function () {
-    var homeApp = angular.module('homeController', []);
+var homeApp = angular.module('homeApp', []);
+    homeApp.controller('homeController', function ($scope) {
+        $scope.hello = "Hello Home!";
 });

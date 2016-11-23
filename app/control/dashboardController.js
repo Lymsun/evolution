@@ -7,6 +7,7 @@
  *
  */
 
-(function () {
-    var dashboardApp = angular.module('dashboardController', []);
+var dashboardApp = angular.module('dashboardApp', []);
+    dashboardApp.controller('dashboardController', function ($scope) {
+        $scope.hello = "Hello Dashboard!";
 });

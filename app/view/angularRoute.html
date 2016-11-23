@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="angularRoute">
     <head>
         <meta charset="UTF-8">
         <title>Angular Route</title>
 
         <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/angularRoute.css">
 
         <!--angular-->
         <script src="../js/angular.js"></script>
@@ -16,7 +17,13 @@
         <script src="../control/dashboardController.js"></script>
     </head>
 
-    <body ng-app="angularRoute">
-        <div ng-view></div>
+    <body ng-controller="routeController">
+        <div id="navigator">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#/home">Home</a></li>
+                <li role="presentation"><a href="#/dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+        <div id="main" ng-view></div>
     </body>
 </html>
