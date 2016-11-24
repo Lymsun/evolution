@@ -29,7 +29,7 @@ app.controller('visualizationController', function ($scope, $rootScope, $timeout
         var tempMonth = tempDate.getMonth().toString()<10?"0"+tempDate.getMonth().toString:tempDate.getMonth().toString();
         var tempDay = tempDate.getDate().toString()<10?"0"+tempDate.getDate().toString():tempDate.getDate().toString();
         var tempWeek = "";
-        switch(tempDate.getDay().toString()) {
+        switch(tempDate.getDay()) {
             case 1: tempWeek = "一";break;
             case 2: tempWeek = "二";break;
             case 3: tempWeek = "三";break;
@@ -38,7 +38,7 @@ app.controller('visualizationController', function ($scope, $rootScope, $timeout
             case 6: tempWeek = "六";break;
             case 7: tempWeek = "七";break;
         }
-        $scope.date.currentDate = tempYear+"-"+tempMonth+"-"+tempDay+"星期"+tempWeek;
+        $scope.date.currentDate = tempYear+"-"+tempMonth+"-"+tempDay+"  星期"+tempWeek;
     };
     updateTime();
     updateDate();
