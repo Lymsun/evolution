@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="visualizationApp">
     <head>
         <meta charset="UTF-8">
         <title>Visualization</title>
 
         <link rel="stylesheet" href="../css/visualization.css">
+
+        <!--angular-->
+        <script src="../js/angular.js"></script>
+        <!--application-->
+        <script src="../js/visualization.js"></script>
     </head>
 
-    <body class="mainFrame">
+    <body class="mainFrame" ng-controller="visualizationController">
 
         <!--导航条 start-->
         <header id="navigator">
@@ -31,10 +36,10 @@
                 </ul>
                 <div id="currentTime">
                     <div class="time" id="currentTime_time">
-                        16:23:22
+                        {{date.currentTime}}
                     </div>
                     <div class="date" id="currentTime_date">
-                        2016-11-22 星期二
+                        {{date.currentDate}}
                     </div>
                 </div>
                 <div id="exitBtn">

@@ -8,16 +8,13 @@
  */
 
 
-var app = angular.module('angularRoute', ['ngRoute']);
+var app = angular.module('angularRoute',
+    [   'ngRoute',
+        'angularRoute.homeApp',
+        'angularRoute.dashboardApp'
+    ]);
 
-    app
-        .controller('routeController', function ($scope) {})
-        .controller('homeController', function ($scope) {
-            $scope.hello = "Hello Home!"
-        })
-        .controller('dashboardController', function ($scope) {
-            $scope.hello = "Hello Dashboard!";
-        });
+    app.controller('routeController', function ($scope) {});
 
     app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider
