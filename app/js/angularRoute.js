@@ -14,23 +14,50 @@ var app = angular.module('angularRoute',
         'angularRoute.dashboardApp'
     ]);
 
-    app.controller('routeController', function ($scope) {});
+app.service('_http', function ($http, $q) {
+    var url = 'http://api.map.baidu.com/telematics/v3/weather?location=%E5%8C%97%E4%BA%AC&output=json&ak=VvpQWTKVx3gfWRr2z9IjPHD9';
 
-    app.config(['$routeProvider', function ($routeProvider) {
-        $routeProvider
-            .when('/home', {
-                templateUrl: '../view/home.html',
-                controller: 'homeController',
-                controllerAs: 'home'
-            })
-            .when('/dashboard', {
-                templateUrl: '../view/dashboard.html',
-                controller: 'dashboardController',
-                controllerAs: 'dashboard'
-            })
-            .otherwise({
-                redirectTo: '/home'
+    this.getWeather = function () {
+        var deferred = $q.defer();
+        $http({
+            method: 'GET',
+            url: url
+        }).success(function (data) {
+            deferred.resolve(data);
+        }).error(function () {
+            deferred.reject('There was an error');
+        });
+        return deferred.promise;
+    }
+});
+
+app.config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+        .when('/home', {
+            templateUrl: '../view/home.html',
+            controller: 'homeController',
+            controllerAs: 'home'
+        })
+        .when('/dashboard', {
+            templateUrl: '../view/dashboard.html',
+            controller: 'dashboardController',
+            controllerAs: 'dashboard'
+        })
+        .otherwise({
+            redirectTo: '/home'
         });
 }]);
 
+app.controller('routeController', function ($scope, _http) {
+    $scope.weather = "";
+    var displayWeather = function () {
+        _http.getWeather().then(function (data) {
+            $scope.weather = data.date;
+            alert(data.date);
+        }, function (data) {
+            alert(data);
+        });
+    };
 
+    displayWeather();
+});
