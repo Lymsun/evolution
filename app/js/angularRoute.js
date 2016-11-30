@@ -15,14 +15,11 @@ var app = angular.module('angularRoute',
     ]);
 
 app.service('_http', function ($http, $q) {
-    var url = 'http://api.map.baidu.com/telematics/v3/weather?location=%E5%8C%97%E4%BA%AC&output=json&ak=VvpQWTKVx3gfWRr2z9IjPHD9';
+    var url = 'http://api.map.baidu.com/telematics/v3/weather?location=%E4%BD%9B%E5%B1%B1&output=json&ak=VvpQWTKVx3gfWRr2z9IjPHD9&callback=JSON_CALLBACK';
 
     this.getWeather = function () {
         var deferred = $q.defer();
-        $http({
-            method: 'GET',
-            url: url
-        }).success(function (data) {
+        $http.jsonp(url).success(function (data) {
             deferred.resolve(data);
         }).error(function () {
             deferred.reject('There was an error');
@@ -50,12 +47,12 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.controller('routeController', function ($scope, _http) {
     $scope.weather = "";
+    
     var displayWeather = function () {
         _http.getWeather().then(function (data) {
-            $scope.weather = data.date;
-            alert(data.date);
-        }, function (data) {
-            alert(data);
+            alert(data.results[0].weather_data[0].weather);
+        }, function () {
+            alert("error");
         });
     };
 
