@@ -77,7 +77,7 @@ app.controller('routeController', function ($scope, _http) {
  {
  if(weatherImgObject[weatherKey][0] == currentWeatherStatus)
  {
- tempWeatherImageUrl = weatherImgObject[weatherKey][1];
+ tempWeatherImageUrl = weatherImgObject[weatherKey][1];\
  break;
  }
  else
