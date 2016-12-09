@@ -8,6 +8,8 @@
 
         <!--angular-->
         <script src="../js/angular.js"></script>
+        <!--Baidu Map-->
+        <script src="http://api.map.baidu.com/api?v=2.0&ak=VvpQWTKVx3gfWRr2z9IjPHD9"></script>
         <!--application-->
         <script src="../js/visualization.js"></script>
     </head>
@@ -64,7 +66,11 @@
         <!--导航条 end-->
 
         <!--可视化区域 start-->
-        <div id="main"></div>
+        <div class="content realtime">
+            <div class="center">
+                <div id="map"></div>
+            </div>
+        </div>
         <!--可视化区域 end-->
 
     </body>
