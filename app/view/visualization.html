@@ -8,10 +8,13 @@
 
         <!--angular-->
         <script src="../js/angular.js"></script>
+        <!--jquery-->
+        <script src="../js/jquery-3.1.1.min.js"></script>
         <!--Baidu Map-->
         <script src="http://api.map.baidu.com/api?v=2.0&ak=VvpQWTKVx3gfWRr2z9IjPHD9"></script>
         <!--application-->
         <script src="../js/visualization.js"></script>
+        <script src="../js/map.js"></script>
     </head>
 
     <body class="mainFrame" ng-controller="visualizationController">
@@ -67,9 +70,11 @@
 
         <!--可视化区域 start-->
         <div class="content realtime">
-            <div class="center">
+            <div class="areaLeft"></div>
+            <div class="areaCenter">
                 <div id="map"></div>
             </div>
+            <div class="areaRight"></div>
         </div>
         <!--可视化区域 end-->
 

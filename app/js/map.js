@@ -10,3 +10,10 @@
 
 var map;
 
+function initialMap() {
+    map = new BMap.Map("map", {enableMapClick: false});
+}
+
+$(function () {
+   initialMap();
+});
