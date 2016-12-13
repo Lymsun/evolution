@@ -222,7 +222,46 @@ ul {
 ***************start*****************
 *可视化区域 style
 */
+.content {
+	background: #0a1415;
+	height: 870px;
+	overflow: hidden;
+	position: relative;
+}
 
+.content .areaLeft {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(10, 20, 21, 0.9);
+	box-sizing: border-box;
+	z-index: 10000px;
+}
+
+.content .areaCenter {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+}
+
+.content .areaCenter #map {
+	height: 910px;
+	position: relative;
+	z-index: 0;
+	color: rgb(0, 0, 0);
+	text-align: left;
+	background-color: rgb(243, 241, 236);
+}
+
+.content .areaRight {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: rgba(10, 20, 21, 0.9);
+	box-sizing: border-box;
+	z-index: 10000px;
+}
 /*
 *可视化区域 style
 ****************end******************
