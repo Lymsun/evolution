@@ -44,13 +44,18 @@ var styleJson = [
 ];
 
 function initialMap() {
-    map = new BMap.Map("map", {enableMapClick: false});
+    map = new BMap.Map("map");
     map.enableScrollWheelZoom(true);
+    var setting_point = new BMap.Point(are_points.zumiao.lng, are_points.zumiao.lat);
+    map.centerAndZoom(setting_point, 15);
     map.setMapStyle({
         styleJson: styleJson
     });
+    var marker = new BMap.Marker(setting_point);
+    map.addOverlay(marker);
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE);
 }
 
 $(function () {
-   initialMap();
+   //initialMap();
 });
